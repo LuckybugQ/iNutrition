@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='main-block'>
+    <view class="logo">
+    <image class="image" src='../../images/inu.png'></image>
+    </view>
+<view class='swp'>
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+  <navigator url="../details/details?id={{item.id}}" class="swiper-item">
+      <image src="{{item.image}}" mode="aspectFill"></image>
+  </navigator>
+  </swiper-item>
+</swiper>
+</view>
+<view class="weui-search-bar__form">
+<view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="20"></icon>
+      <view bindtap="search"class="weui-search-bar__input">今天你想吃什么？</view>
+</view>
+</view>
+
+
+
+  </view>
+  <view class='list'>
+    <navigator url="/pages/foods/index">
+    <view class='list1' >
+      <view class='list-img'><image src='../../images/foods.png' style='width:45px;height:45px;'></image> </view>
+      <view class='list-type'><text>食材</text></view>
+      <view class='arrow'></view>
+    </view>
+    </navigator>
+    <navigator url="/pages/meals/index">
+    <view class='list1'>
+      <view class='list-img'><image src='../../images/meal.png' style='width:45px;height:45px;'></image> </view>
+      <view class='list-type'><text>膳食</text></view>
+      <view class='arrow'></view>
+    </view>
+    </navigator>
+    <navigator url="../searchresult/searchresult?cata=snack">
+    <view class='list1'>
+      <view class='list-img'><image src='../../images/snacks.png' style='width:45px;height:45px;'></image> </view>
+      <view class='list-type'><text>零食</text></view>
+      <view class='arrow'></view>
+    </view>
+    </navigator>
+  </view>
+
+</view>

@@ -1,0 +1,287 @@
+page {
+   background-color: #fff;
+}
+
+.window {
+   position: relative;
+   top:10rpx;
+   width: 100%;
+}
+
+.classesbox {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.classes_item {
+   padding: 3px auto 3px auto;
+   border: #e6e6e6 1px solid;
+   margin: 5px;
+   border-radius: 4px;
+   font-size: 28rpx;
+   width: 100%;
+}
+
+.rggg_view {
+   width: 100%;
+   height: 200rpx;
+   padding: 10rpx;
+   background-color: #fff;
+}
+
+/* 注意点：使用columns时，每一行中的组件本身的高度不能高于组件所在行的行高，
+否则会发现组件的好似被切割成2块或多块了  */
+.rggg {
+   width: 100%;
+   height: 200rpx;
+   columns: 4;
+   column-gap: 20rpx;
+   letter-spacing: 5px;
+   line-height: 40px;
+}
+
+/* 
+   注意点：columns分列后，最好使用margin-bottom控制行间距，
+   margin-top会导致第一项与后面的项不一致，很丑
+  */
+.class_r_g {
+   text-align: center;
+   margin-bottom: 5rpx;
+}
+
+/* radio文本的点击效果  */
+.checkedt {
+   color: #0e9eda;
+   border: #0e9eda 1px solid;
+   border-radius: 4px;
+   font-size: 32rpx;
+   padding: 3px 18px;
+}
+
+/* 
+   radio文本的默认效果  
+   注意点：组件本身的高度不能高于组件所在行的行高，否则会发现组件的好似被切割成2块或多块了
+*/
+.normalt {
+   color: #666666;
+   border: #e6e6e6 1px solid;
+   border-radius: 4px;
+   font-size: 32rpx;
+   padding: 3px 18px;
+}
+
+
+ .cont_box {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding-bottom: 120rpx;
+} 
+/*订单最外层包裹  */
+.weui-panel_box {
+  margin-top: 10rpx;
+}
+/*去掉默认的bordr-bottom */
+.weui_titleBox::after {
+  border-bottom: none;
+}
+/*订单盒子  */
+.weui_orderBox {
+  height: 100rpx;
+  /* line-height: 100rpx; */
+  padding: 0 30rpx;
+  vertical-align: sub;
+  border-bottom: 1px solid #e5e5e5;
+}
+/*去掉默认的bordr-bottom */
+.weui_orderBox::before {
+  border-top: none;
+}
+/*合计  */
+.order_sum {
+  float:right;
+  height: 100rpx;
+  padding: 0 30rpx;
+  line-height: 100rpx;
+  color: #000;
+  font-size: 32rpx;
+}
+/*去掉默认的bordr-bottom */
+.order_sum::after {
+  border-bottom: none;
+}
+/*总钱数颜色  */
+.order_sumMoney {
+  font-size:40px;
+  color: #0e9eda;
+}
+/*价格，份数  */
+.order_price {
+  font-size: 28rpx;
+}
+/*缝隙  */
+.fenxi {
+  width: 100%;
+  height: 1rpx;
+  background: #ddd;
+}
+
+/*烹调方式  */
+.guest_numInput {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 32rpx;
+  color: #0e9eda;
+  height: 50rpx;
+}
+
+::-webkit-input-placeholder {
+  color: #000;
+}
+/*选用餐人数按钮盒子  */
+
+/*输入备注  */
+.beizhu_input {
+  border-bottom: 1px #d9d9d9 solid;
+  font-size: 32rpx;
+  padding: 0 30rpx;
+  height: 100rpx;
+  width:80%;
+  position: relative;
+  left:5%;
+  line-height: 100rpx;
+
+}
+/*选择支付方式  */
+.pay_way {
+  background-color: #fff;
+  padding: 0 30rpx;
+  line-height: 100rpx;
+  color: #202020;
+}
+/*支付方式选项  */
+.pay_wayName {
+  overflow: hidden;
+  display: block;
+}
+/*支付方式名称  */
+.pay_wayNameL {
+  float: left;
+}
+/*支付状态  */
+.pay_wayNameR {
+  float: right;
+}
+
+/*提交订单按钮 */
+.footer_box {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0rpx;
+  z-index: 100;
+  background-color: #fff;
+}
+/*总计金额、件数  */
+.all_money {
+  width: 90%;
+  margin: 0 auto;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  background-color: #09ba07;
+  border-radius: 20rpx;
+}
+
+
+/*弹窗遮罩层  */
+
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity:0.6;
+  background: #000;
+   z-index: 666; 
+}
+
+/*选择支付方式弹窗  */
+.cart_popup {
+  width: 100%;
+  height: 285px;
+  background: #fff;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  bottom: -285px;
+  overflow: auto;
+}
+
+.shopcart_title {
+  width: 100%;
+  height: 70rpx;
+  line-height: 80rpx;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  background-color: #0e9eda;
+  color: #fff;
+}
+
+/*返回按钮  */
+.shopcart_close {
+  position: absolute;
+  right: 30rpx;
+  font-size: 28rpx;
+}
+.margin_r {
+  margin-right: 30rpx;
+}
+
+/*购物车列表  */
+
+.cart_cells {
+  width: 100%;
+  height: 98rpx;
+  position: relative;
+}
+
+.cells_name {
+padding-left: 20rpx;
+  width: 50%;
+  position: absolute;
+  left:0;
+  top: 20rpx;
+}
+
+.price-box {
+  width: 40%;
+  font-size: 32rpx;
+  position: absolute;
+  left: 60%;
+  top: 20rpx;
+  color: #01bf05;
+}
+
+.complete{
+  background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+  color:white;
+  position: absolute;
+  left:2.5%;
+  width:95%;
+  border-radius: 50rpx;
+}
+
+.fenxi2 {
+  position: relative;
+  top:100rpx;
+  width: 100%;
+  height: 200rpx;
+  background: #fff;
+}

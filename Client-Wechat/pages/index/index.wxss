@@ -1,0 +1,93 @@
+/**index.wxss**/
+page{
+  background-color: #fff;
+}
+
+.logo{
+  position: absolute;
+  top:625rpx; 
+  left:25%;
+}
+.logo .image{
+  height: 50rpx;
+  width:380rpx;
+}
+.main-block{
+  justify-items: center;
+  height: 500px;
+  width: 100%;
+  background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+  margin-top: -100px;
+}
+.list{
+  width: 100%;
+  height:180rpx;
+}
+.list1{
+  font-size:40rpx;
+  height: 73px;
+  border-bottom: solid #999 1rpx;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.list1 view{
+  float:left;
+}
+
+.list-type{
+  margin-left: 20px;
+  margin-top: 15px;
+}
+.arrow{
+width: 10px;
+height: 10px;
+border-top: 2px solid #999;
+border-right: 2px solid #999;
+position: absolute;
+right: 20rpx;
+margin-top: 20px;
+transform: rotate(45deg);
+}
+
+
+.weui-search-bar__form {
+  position: relative;
+  top:0%;
+  width:80%;
+  height:8%;
+  left:10%;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+  flex: auto;
+  border-radius: 30px;
+  background: #fff;
+  border: 7.5rpx solid #e6e6ea;
+}
+
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 5rpx;
+}
+
+.weui-search-bar__box {
+  position: relative;
+  top:5rpx;
+  padding-left: 40px;
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.weui-search-bar__input {
+  height: 30px;
+  line-height: 30px;
+  font-size: 35rpx;
+  color:#999;
+}
+
+.swp{
+  height:500rpx;
+  margin-top:200rpx;
+}

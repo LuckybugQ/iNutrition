@@ -1,0 +1,120 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">食物详情</view>
+</cu-custom>
+<view class="cart-list" wx:for="{{carts}}" wx:key="{{index}}">
+<view class="cart-thumb-box">
+<image class="cart-thumb" src="{{item.image}}"></image>
+</view>
+<text class="cart-pro-name">{{item.name}}</text>
+<text class="cart-pro-info">{{item.cal}}kcal·{{item.amount}}g</text>
+<view class="cart-pro-score" style='border-color:{{item.color}}'><text>{{item.score}}</text></view>
+<text class="cart-pro-eva">{{item.eva}}</text>
+<button class="add" bindtap="add"><text class="cuIcon-roundadd"> </text> 加入今日份食谱</button>
+<button hidden="{{delFlag}}" class="del" bindtap="del"><text class="cuIcon-roundclose"> </text> 移出今日份食谱</button>
+<button hidden="{{buiFlag}}" class="bui" bindtap="bui"><text class="cuIcon-roundadd"> </text> 制作膳食</button>
+
+
+<view class="more-info-bg">
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{2}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{Tab[index]}}
+    </view>
+  </view>
+</scroll-view>
+
+<view class="more-info  shadow-warp" wx:if="{{TabCur==0}}">
+  <view class="padding flex text-center text-grey bg-white">
+  <view class="flex flex-sub flex-direction solid-right">
+    <view class="flex align-end justify-center">
+      <view class="text-xxl text-blue ">{{item.nutrition[0]}}</view>
+      <view class="text-s text-blue padding-left-xs padding-bottom-xs" >g</view>
+      </view>
+      <view class="margin-top-sm">糖</view>
+    </view>
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="flex align-end justify-center">
+      <view class="text-xxl text-blue ">{{item.nutrition[1]}}</view>
+      <view class="text-s text-blue padding-left-xs padding-bottom-xs" >g</view>
+      </view>
+      <view class="margin-top-sm">蛋白质</view>
+    </view>
+    <view class="flex flex-sub flex-direction">
+      <view class="flex align-end justify-center">
+      <view class="text-xxl text-blue ">{{item.nutrition[2]}}</view>
+      <view class="text-s text-blue padding-left-xs padding-bottom-xs" >g</view>
+      </view>
+      <view class="margin-top-sm">脂肪</view>
+    </view>
+  </view>
+<view class="detail-info-box text-xl">
+<text class="left">膳食纤维</text>
+<text class="right">{{item.nutrition[3]}}g</text> 
+<text class="left">\n胆固醇</text>
+<text class="right">{{item.nutrition[4]}}mg</text>
+<text class="left">\n维生素A</text>
+<text class="right">{{item.nutrition[5]}}ug</text>
+<text class="left">\n维生素B1</text>
+<text class="right">{{item.nutrition[6]}}mg</text>
+<text class="left">\n维生素B2</text>
+<text class="right">{{item.nutrition[7]}}mg</text>
+<text class="left">\n维生素C</text>
+<text class="right">{{item.nutrition[8]}}mg</text>
+<text class="left">\n维生素E</text>
+<text class="right">{{item.nutrition[9]}}mg</text>
+<text class="left">\n叶酸</text>
+<text class="right">{{item.nutrition[10]}}ug</text>
+<text class="left">\n钙</text>
+<text class="right">{{item.nutrition[11]}}ug</text>
+<text class="left">\n铁</text>
+<text class="right">{{item.nutrition[12]}}mg</text>
+<text class="left">\n钾</text>
+<text class="right">{{item.nutrition[13]}}mg</text>
+<text class="left">\n锌</text>
+<text class="right">{{item.nutrition[14]}}mg</text>
+</view>
+</view>
+
+<view class="more-info shadow-warp" wx:if="{{TabCur==1 && buiFlag}}">
+<view class="detail-info-box">
+<view class='text-blue text-xl'>用料：</view>
+<view class="infood" wx:for="{{foods}}" wx:key="{{index}}">
+<text class="left">{{item.name}}</text>
+<text class="right">{{item.quantity}}</text> 
+</view>
+<view class='margin-top text-blue text-xl'>步骤：</view>
+<view class="infood" wx:for="{{steps}}" wx:key="{{index}}">
+<text class="">第 {{index+1}} 步:</text>
+<image class='steps radius shadow-wrap' src='{{item.image}}'></image>
+<text>{{item.text}}</text>
+</view>
+</view>
+</view>
+
+<view class="more-info shadow-warp" wx:if="{{TabCur==1 && !buiFlag}}">
+   <view class="cu-list menu-avatar">
+    <view class="solid-bottom cu-item" wx:for="{{recommendList}}" wx:key="{{index}}">
+      <navigator url="../details/details?id={{item.id}}">
+      <image class="thumb" src="{{item.image}}" mode="widthFix"></image></navigator>
+      <view class="content">
+        <view class="text-black">{{item.name}}</view>
+        <view class="text-gray text-sm">{{item.cal}}kcal·{{item.amount}}g</view>
+      </view>
+      <view class="right-box" style="text-align:center;padding:10rpx;width:100rpx">
+        <view class="text-black text-xxl" style='border:1px solid {{item.color}};border-radius:15rpx;'>
+        {{item.score}}</view>
+        <view class="text-grey text-xs">{{item.eva}}</view>
+      </view>
+    </view>
+</view>
+
+
+</view>
+</view>
+
+
+</view>
+ 
+

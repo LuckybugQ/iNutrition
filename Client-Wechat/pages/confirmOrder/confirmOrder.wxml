@@ -1,0 +1,83 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">制作膳食</view>
+</cu-custom>
+<!--头部  -->
+
+
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text> 根据您所选的食材，我们为您推荐以下膳食
+  </view>
+</view>
+<view class='swp solid-bottom'>
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+  <navigator url="../details/details?id={{item.id}}" class="swiper-item">
+      <image src="{{item.image}}" mode="aspectFill"></image>
+  </navigator>
+  </swiper-item>
+</swiper>
+</view>
+
+  <!--内容  -->
+  <view class="">
+    <view class="weui-panel__hd weui_titleBox">已选食材</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_small-appmsg">
+        <view class="weui-cells weui-cells_in-small-appmsg" wx:for="{{cartList}}" wx:key="">
+          <view class="weui-cell weui-cell_access weui_orderBox" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="{{item.image}}" style="width: 26px;height: 26px;margin-right: 15px;" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>{{item.name}}</view>
+            </view>
+            <view class="weui-cell__ft order_price">{{item.quantity}}x{{item.amount}}g</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  <view class="fenxi"></view>
+  <!--输入用餐人数  -->
+  <view class="guest_numInput">请选择烹调方式：</view>
+      <view class='rggg_view solid-bottom'>
+         <radio-group class='rggg' bindchange='radiochange'><!-- 事件绑定 -->
+            <view class="class_r_g" wx:for="{{classes_array}}">
+               <radio id="{{item.name}}" hidden value="{{item.id}}" checked="{{item.checked}}" data-id='item.index'></radio>           
+               <label class="label-2__text" for="{{item.name}}">
+                  <text class='{{item.checked?"checkedt":"normalt"}}'>{{item.name}}</text><!-- 根据每一项的checked属性来切换点击radio中的文本的点击效果 -->
+               </label>
+            </view>
+         </radio-group>
+      </view>
+<!--备注  -->
+   <view class="cu-form-group margin-top">
+		<input class="Remark" bindinput="getRemark" value="{{remarks}}" placeholder="给你的膳食起个名吧~"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub margin-top">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+      <view class="solids" bindtap="SearchImg">
+				<text class="cuIcon-search"></text>
+			</view>
+		</view>
+	</view>
+  
+   <view class="weui-panel__hd order_sum">评分：<span class="order_sumMoney">{{displayPrice}}</span></view>
+  
+  
+  <view class='fenxi2'></view>
+  <!--付款方式  -->
+  <view class="footer_box">
+  <button class="complete" size="{{primarySize}}" bindtap="complete">制作完成！</button>
+  </view>
+</view>

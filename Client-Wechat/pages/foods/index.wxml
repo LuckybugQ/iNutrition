@@ -1,0 +1,49 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">食材</view>
+</cu-custom>
+<!--index.wxml-->
+<view class="container">
+  <view class='main-block'>
+<view class="weui-search-bar">
+<view class="weui-search-bar__form">
+<view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <view bindtap="search"class="weui-search-bar__input">今天你想吃什么？</view>
+</view>
+</view>
+</view>
+</view>
+  <view class='list'>
+    <view class='list-row'>
+      <view class='list1' >
+        
+        <view class='list-img'><navigator url="../searchresult/searchresult?cata=grain"><image src='../../images/grain.jpg'></image></navigator> </view>
+        <view class='list-type'><text class='xxl'>五谷杂粮</text></view>
+        
+      </view>
+      <view class='list1' >
+        
+        <view class='list-img'><navigator url="../searchresult/searchresult?cata=vegetable"><image src='../../images/vegetables.jpg'></image></navigator> </view>
+        <view class='list-type'><text class='xxl'>蔬菜</text></view>
+        
+      </view>
+    </view>
+        <view class='list-row'>
+      <view class='list1' >
+        
+        <view class='list-img'><navigator url="../searchresult/searchresult?cata=fruit"><image src='../../images/fruit.jpg'></image></navigator> </view>
+        <view class='list-type'><text class='xxl'>水果</text></view>
+        
+      </view>
+      <view class='list1' >
+        
+        <view class='list-img'><navigator url="../searchresult/searchresult?cata=meat"><image src='../../images/meat.jpg'></image></navigator> </view>
+        <view class='list-type'><text class='xxl'>肉、蛋和水产</text></view>
+        
+      </view>
+    </view>
+  
+  </view>
+
+</view>

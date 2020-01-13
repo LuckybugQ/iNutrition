@@ -1,0 +1,127 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">制作膳食</view>
+</cu-custom>
+<!--logs.wxml-->
+<view class="page">
+  <!-- 搜索框view -->
+<view class="weui-search-bar">
+<view class="weui-search-bar__form">
+<view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <view bindtap="search"class="weui-search-bar__input">查找食材</view>
+</view>
+</view>
+<image class="camera" src="../../images/camera.png" bindtap="camera"></image>
+</view>
+<scroll-view scroll-x class="bg-gray nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{4}}" wx:key bindtap="tabSelect" data-id="{{index}}">{{array[index]}}</view>
+  </view>
+</scroll-view>
+ <scroll-view scroll-y class="right-cont">
+          <view wx:if="{{hasList}}">
+          <block wx:for="{{foodList}}" wx:key="">
+           <view class=" weui-media-box_appmsg bc_white mT" hover-class="none">
+              
+                <view class="weui-media-box__hd  img_box ">
+                <navigator url="../details/details?id={{item.id}}&build=true">
+                <image class="weui-media-box__thumb img_box" src="{{item.image}}" />
+                </navigator>  
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="cai_title" data-index="{{index}}">{{item.name}}</view>
+                  <view class="cai_desc"> {{item.cal}}kcal·{{item.amount}}g</view>
+                  <view class="price-stepper">
+                    <view class="cai_price"  data-index="{{index}}">{{item.score}}</view>
+                    <view class="stepper">
+                      <!-- 减号 -->
+                      <view class="iconfont icon-minus2 fontP" hidden="{{item.quantity<=0}}" bindtap="minusCount"  data-id="{{item.id}}"  data-index="{{index}}"></view>
+                      <!-- 数量 -->
+                      <view class="value" hidden="{{item.quantity<=0}}" data-id="{{item.id}}"   data-num="{{item.quantity}}">{{item.quantity}}</view>
+                      <!-- 加号 -->
+                      <view class="iconfont icon-plus1 fontP" data-id="{{item.id}}" data-index="{{index}}" bindtap="addCount"></view>
+                    </view>
+                  </view>
+                </view>
+            </view>
+          </block>
+        </view>   
+        <view wx:else>
+        <view class="cart-no-data">没有找到想要的结果</view>
+          </view>
+
+        </scroll-view>
+       
+        <!--底部  -->
+        <view class="bottom_box">
+          <image class="shopCart_img" src="../../images/biandang-box.png" bindtap="cascadeToggle"></image>
+          <view class="all_money">评分：{{totalPrice}}，{{totalWeight}}g</view>
+          <button class="choose_ok color-block" bindtap="gotoOrder" disabled="{{next}}">下一步</button>
+        </view>
+     
+  <!--购物车弹窗  -->
+  <view hidden="{{maskFlag}}" class="modal-mask" bindtap="cascadeToggle"></view>
+  <view animation="{{animationData}}"  class="cart_popup">
+  <view class="shopcart_title"><span class="shopcart_close" bindtap="cascadeToggle">返回</span>已选食材<span class="shopcart_deleteAll" bindtap="cleanList">清空</span></view>
+    <scroll-view scroll-y  style="height:250px;margin-top:35px">
+    <block wx:for="{{cartList}}" wx:key="" >
+      <view class="cart_cells" wx:if="{{item.quantity > 0}}">
+        <view class="cells_name"  data-index="{{index}}">{{item.name}}</view>
+        <view class="cells_price"  data-index="{{index}}">{{item.price}}</view>
+        <view class="price-box">
+          <!-- 减号 -->
+          <view class="iconfont icon-minus2 fontP" hidden="{{item.quantity<=0}}"  data-index="{{index}}" data-id="{{item.id}}"  bindtap="minusCount"></view>
+          <!-- 数量 -->
+          <view class="value" style="color:#1296db;margin-top:8rpx" hidden="{{item.quantity<=0}}" data-id="{{item.id}}">{{item.quantity}}</view>
+          <!-- 加号 -->
+          <view class="iconfont icon-plus1  fontP" bindtap="addCount" data-id="{{item.id}}" data-index="{{index}}"></view>
+        </view>
+        <icon class="shopcart_delete" type="clear" size="18"  data-index="{{index}}" data-id="{{item.id}}" bindtap="deleteOne" />
+      </view>
+    </block>
+    </scroll-view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='camera'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">这是{{camera}}吗？</view>
+    </view>
+    <view class="cu-bar bg-white justify-center">
+      <view class="action">
+        <button class="cu-btn bg-blue" bindtap="cameraConfirm">是的</button>
+        <button class="cu-btn line-blue text-blue margin-left" bindtap="hideModal">不是</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='fail'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">识别失败</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-blue"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      我们的食材库中没有找到图片中的食材。
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='success'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">识别成功</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-blue"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      已将该食材加入食材清单。
+    </view>
+  </view>
+</view>

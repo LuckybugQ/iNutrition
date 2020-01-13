@@ -1,0 +1,21 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">帮助中心</view>
+</cu-custom>
+<view class="cells">
+    <view class="item"  wx:for="{{memberList}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+        <view bindtap="isOpen" class="cdn" data-index="{{item.id}}">
+            <view>
+            <image class="img" src="/images/helphelp.png" mode="aspectFill"/><text class="content">{{item.cont}}</text>
+            </view>
+            <view>
+            <image class="icon_img" src="{{item.hiddena ? '/images/dow.png' : '/images/upp.png'}}" mode="aspectFill"/>
+            </view>
+        </view>
+        <view hidden="{{item.hiddena}}"  class="hidden">
+            <block wx:for="{{item.invalidActivty}}"  wx:for-index="index" wx:for-item="items" wx:key="index">
+              <view class="help">{{items.help}}</view>
+            </block>
+        </view>
+    </view>
+</view>

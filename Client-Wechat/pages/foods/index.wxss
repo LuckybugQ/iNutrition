@@ -1,0 +1,31 @@
+/**index.wxss**/
+page{
+  background-color: #fff;
+}
+.main-block{
+  height: 50px;
+  width: 100%;
+  background-color: rgba(153, 153, 153, 0.103);
+  margin-top: -100px;
+}
+.list{
+  position: relative;
+  left:-3%;
+}
+.list-img image{
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+}
+.list1{
+  margin-left: 20px;
+  margin-top: 20px;
+  float: left;
+}
+
+.weui-search-bar__input {
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  color:#999;
+}

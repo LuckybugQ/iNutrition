@@ -1,0 +1,38 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content"></view>
+</cu-custom>
+<view class="weui-search-bar">
+<view class="weui-search-bar__form">
+<view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <view bindtap="search"class="weui-search-bar__input">请输入查询内容</view>
+</view>
+</view>
+</view>
+
+<view wx:if="{{hasList}}">
+   <view class="cu-list menu-avatar">
+    <view class="solid-bottom cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{carts}}" wx:key="{{index}}" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}">
+      <navigator url="../details/details?id={{item.id}}">
+      <image class="thumb" src="{{item.image}}"></image></navigator>
+      <view class="content">
+        <view class="text-black">{{item.name}}</view>
+        <view class="text-gray text-sm">{{item.cal}}kcal·{{item.amount}}g</view>
+      </view>
+      <view class="right-box" style="text-align:center;padding:10rpx;width:100rpx">
+        <view class="text-black text-xxl" style='border:1px solid {{item.color}};border-radius:15rpx;'>
+        {{item.score}}</view>
+        <view class="text-grey text-xs">{{item.eva}}</view>
+      </view>
+      <view class="move">
+        <view class="{{item.add?'bg-gradual-red':'bg-gradual-blue'}}" bindtap="{{item.add?'del':'add'}}" data-index="{{index}}">
+        <text class="{{item.add?'cuIcon-roundclose':'cuIcon-roundadd'}} xxl text-white"></text></view>
+      </view>
+    </view>
+  </view> 
+</view>
+
+<view wx:else>
+        <view class="cart-no-data">没有找到想要的结果</view>
+</view>

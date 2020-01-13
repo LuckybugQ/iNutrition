@@ -1,0 +1,39 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">打卡记录</view>
+</cu-custom>
+
+<calendar selected="{{selected}}" bindselect="bindselect" bindgetdate="bindgetdate" />
+<view wx:if="{{hasList}}">
+
+<view class='box'>当日得分：<view class='totalPrice'>{{totalPrice}}</view>
+<view class='updown'><image src='/images/up.png' hidden='{{!updown}}' class='up'></image>
+<image src='/images/down.png' hidden='{{updown}}' class='down'></image></view>
+</view>
+<view class="cart-title">
+     <text>当日份食谱：</text>
+</view>
+   <view class="cu-list menu-avatar">
+    <view class="solid-bottom cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{carts}}" wx:key="{{index}}" data-target="move-box-{{index}}">
+      <navigator url="../details/details?id={{item.id}}">
+      <image class="thumb" src="{{item.image}}"></image></navigator>
+      <view class="content">
+        <view class="text-black">{{item.name}}</view>
+        <view class="text-gray text-sm">{{item.cal}}kcal·{{item.amount}}g</view>
+      </view>
+      <view class="right-box" style="text-align:center;padding:10rpx;width:100rpx">
+        <view class="text-black text-xxl" style='border:1px solid {{item.color}};border-radius:15rpx;'>
+        {{item.score}}</view>
+        <view class="text-grey text-xs">{{item.eva}}</view>
+      </view>
+      <view class="move">
+        <view class="bg-red" bindtap='deleteList'>删除</view>
+      </view>
+    </view>
+  </view> 
+</view>
+
+
+<view wx:else>
+<view class="cart-no-data">这一天没有打卡~</view>
+</view>

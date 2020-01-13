@@ -1,0 +1,123 @@
+
+.canvasBox{
+  height: 600rpx;
+  position: relative;
+  background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+}
+.title{
+  position: relative;
+  top:50rpx;
+  font-size:35rpx;
+  text-align: center;
+  color:#fff;
+}
+.biggerCircle{
+  border:2px solid springgreen;
+  width: 435rpx;
+  height: 435rpx;
+  border-radius: 50%;
+  position: absolute;
+  top:100rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+}
+.bigCircle{
+  width: 415rpx;
+  height: 415rpx;
+  border-radius: 50%;
+  position: absolute;
+  top:100rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  background-color: #ddd;
+}
+.littleCircle{
+  width: 392rpx;
+  height: 392rpx;
+  border-radius: 50%;
+  position: absolute;
+  top:100rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+}
+.canvas{
+  width: 420rpx;
+  height: 420rpx;
+  position: absolute;
+  left: 0;
+  top:100rpx;
+  bottom: 0;
+  right: 0;
+  margin: auto auto;
+  z-index: 99;
+}
+
+
+.cart-title{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90rpx;
+ 
+    padding:20rpx 30rpx 20rpx 30rpx;
+    box-sizing: border-box;
+    background: ghostwhite;
+    color: #000;
+}
+
+.cart-no-data{
+    padding:40rpx 0;
+    color: #999;
+    text-align: center;
+}
+
+.daka{
+  position: relative;
+  float: right;
+  top: 0rpx;
+  right:0rpx;
+  text-align: center;
+  color: #0e9eda;
+  width:120rpx;
+  height: 50rpx;
+  border: 1px solid #0e9eda;
+  border-radius: 10rpx; 
+  z-index: 2;
+}
+.daka2{
+  position: relative;
+  float: right;
+  top: 0rpx;
+  right:0rpx;
+  text-align: center;
+  color: #e9e9e9;
+  width:120rpx;
+  height: 50rpx;
+  border: 1px solid #e9e9e9;
+  border-radius: 10rpx; 
+  z-index: 1;
+}
+
+.thumb{
+    border: lightgrey;
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    top: 20rpx;
+    left: 30rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+

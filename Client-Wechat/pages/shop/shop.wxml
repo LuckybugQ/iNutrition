@@ -1,0 +1,286 @@
+<scroll-view scroll-x class="bg-gradual-blue nav">
+<view class='fff'></view>
+  <view class="flex text-center ">
+    <view class="cu-item flex-sub {{index==TabCur0?'text-white cur':''}}" wx:for="{{2}}" wx:key bindtap="tabSelect0" data-id="{{index}}">
+      <text class='cuIcon-{{TabList00[index]}} text-white'></text> {{TabList0[index]}}
+    </view>
+  </view>
+</scroll-view>
+<view class='community' wx:if='{{TabCur0==0}}'>
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur1?'text-blue cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect1" data-id="{{index}}">
+     {{TabList1[index]}}
+    </view>
+  </view>
+</scroll-view>
+<view class='shipu' wx:if='{{TabCur1==0}}'>
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3471303320,2846820604&fm=26&gp=0.jpg" mode="aspectFill"></image>
+      <view class="cu-tag bg-blue">食谱推荐</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut text-xl">健身减脂必备！生煎鸡胸肉！</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1359330524,975872876&fm=26&gp=0.jpg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">爱健身的小明</view>
+          <view class="text-gray text-sm flex justify-between">
+            10分钟前
+            <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 87
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 2
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564985088242&di=eabf7df8d4edf4407b4f6ac160e43466&imgtype=0&src=http%3A%2F%2Fcp1.douguo.net%2Fupload%2Fcaiku%2F0%2F2%2F0%2Fyuan_021f77de3fb005c5b4bba011fd8252f0.jpeg" mode="aspectFill"></image>
+      <view class="cu-tag bg-blue">食谱推荐</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut text-xl">超级下饭的土豆烧排骨</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=265535345,1890400617&fm=26&gp=0.jpg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">Cooker</view>
+          <view class="text-gray text-sm flex justify-between">
+            12分钟前
+            <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 158
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 34
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 3
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564985032584&di=a0b18b17652f245dd61761e16bc9e6c0&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170419%2Fe8cf48b13d3a494cb45c657b61beedc3_th.jpeg" mode="aspectFill"></image>
+      <view class="cu-tag bg-blue">食谱推荐</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut text-xl">超赞夏日汤：豆腐丸子汤！</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1466662081,1140396699&fm=26&gp=0.jpg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">阿包要好好学做菜</view>
+          <view class="text-gray text-sm flex justify-between">
+            15分钟前
+            <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 66
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 10
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 0
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+<view class='diary' wx:if='{{TabCur1==1}}'>
+
+
+
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="cu-bar justify-left bg-white">
+    <view class="action">
+      <text class="cuIcon-titles text-blue"></text>
+      <text class="text-xl text-bold">美好的一天从最美的早餐开始</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+  <view class="image">
+	<view class="cu-form-group">
+		<view class="grid col-3 grid-square flex-sub padding-xs">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+        <view class="cu-tag bg-blue">第{{28-index}}天</view>
+			</view>
+		</view>
+	</view>   
+    </view>
+    <view class="cu-list menu-avatar solid-top">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565592918&di=d92f62d0d7ebc7d113e2e64cfdaccba2&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201804%2F02%2F20180402204840_gxlyg.thumb.700_0.jpeg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">ZSX_Life</view>
+          <view class="text-gray text-sm flex justify-between">
+            更新于 1天前
+            <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 558
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 99
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 23
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="cu-bar justify-left bg-white">
+    <view class="action">
+      <text class="cuIcon-titles text-blue"></text>
+      <text class="text-xl text-bold">肌肉博士的打卡日记</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+  <view class="image">
+	<view class="cu-form-group">
+		<view class="grid col-3 grid-square flex-sub padding-xs">
+			<view class="bg-img" wx:for="{{imgList1}}" wx:key="{{index}}">
+				<image src='{{imgList1[index]}}' mode='aspectFill'></image>
+        <view class="cu-tag bg-blue">第{{10-index}}天</view>
+			</view>
+		</view>
+	</view>   
+    </view>
+    <view class="cu-list menu-avatar solid-top">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2389667761,3710975695&fm=26&gp=0.jpg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">我只喜欢科研</view>
+          <view class="text-gray text-sm flex justify-between">
+            更新于 2天前
+            <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 423
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 55
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 8
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="cu-bar justify-left bg-white">
+    <view class="action">
+      <text class="cuIcon-titles text-blue"></text>
+      <text class="text-xl text-bold">小白和小黑的二人世界~</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+  <view class="image">
+	<view class="cu-form-group">
+		<view class="grid col-3 grid-square flex-sub padding-xs">
+			<view class="bg-img" wx:for="{{imgList2}}" wx:key="{{index}}">
+				<image src='{{imgList2[index]}}' mode='aspectFill'></image>
+        <view class="cu-tag bg-blue">第{{33-index}}天</view>
+			</view>
+		</view>
+	</view>   
+    </view>
+    <view class="cu-list menu-avatar solid-top">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565595796&di=d2a6f38bc56b1a265040d43215b7923a&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201604%2F15%2F20160415082003_JcUdM.jpeg);"></view>
+        <view class="content flex-sub">
+          <view class="text-grey">Bboy白宇</view>
+          <view class="text-gray text-sm flex justify-between">
+            更新于 2天前
+            <view class="text-gray text-sm">
+              <text class="cuIcon-attentionfill margin-lr-xs"></text> 656
+              <text class="cuIcon-appreciatefill margin-lr-xs"></text> 87
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 12
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+</view>
+
+</view>
+
+
+
+
+<view class='shop' wx:if='{{TabCur0==1}}'>
+<scroll-view scroll-x class="bg-white nav solids-top">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub" wx:for="{{4}}" wx:key bindtap="tabSelect" data-id="{{index}}">   
+     <view class="cu-avatar round lg">
+     <image src="../../images/{{index+1}}.jpg" style ="width:100rpx;height:90rpx;"></image>
+     </view>
+    </view>
+  </view>
+</scroll-view>
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{4}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+     {{TabList[index]}}
+    </view>
+  </view>
+</scroll-view>
+
+<view wx:if="hasList">
+   <view class="cu-list menu-avatar">
+    <view class="solid-bottom cu-item" wx:for="{{carts}}" wx:key="{{index}}" data-target="move-box-{{index}}">
+      <view class="cu-avatar xl" style="background-image:url({{item.image}});"></view>
+      <view class="content2">
+        <view class="text-black">{{item.name}}</view>
+        <view class="text-gray text-s" wx:if='{{TabCur<=2}}'>推荐指数：
+        <text class="cuIcon-favor text-blue" wx:for="{{item.star}}" wx:key="item"></text></view>
+        <view class="text-gray text-s" wx:if='{{TabCur==3}}'>价格：<text class="text-blue text-xl">{{item.price}}元</text></view>
+        <view class="text-gray text-sm" wx:if='{{TabCur==0}}'>{{item.average}} | {{item.feature}}</view>
+        <view class="text-gray text-sm" wx:if='{{TabCur==1}}'>{{item.cost}}</view>
+      </view>
+      <view  class="right-box" style="text-align:center;margin:10rpx;width:120rpx">
+      <view wx:if='{{TabCur<=2}}' class="text-grey text-sm">{{item.location}}</view>
+      <view wx:if='{{TabCur<=2}}' class="text-grey text-sm">{{item.distance}}</view>
+
+    <view wx:if ='{{TabCur==3}}' class="cu-capsule round">
+    <view class="cu-tag bg-blue"><text class="cuIcon-likefill"></text>
+    </view>
+    <view class="cu-tag line-blue">{{item.star}}
+    </view>
+  </view>
+
+
+      </view>
+    </view>
+  </view> 
+</view>
+</view>
+
+  <button class="cu-btn icon upload lg shadow-wrap">
+    <text class="cuIcon-cameraadd text-white lg"></text>
+  </button>

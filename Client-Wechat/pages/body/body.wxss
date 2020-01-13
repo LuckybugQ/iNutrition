@@ -1,0 +1,21 @@
+.confirm{
+    font-size:35rpx;
+    position: relative;
+    top:10px;
+    border-radius: 30px;
+    border-bottom: 1rpx solid #e9e9e9;
+    background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+    width: 95%;
+    color:#fff;
+}
+
+.upload{
+    font-size:35rpx;
+    position: relative;
+    top:10px;
+    border-radius: 5px;
+    border-bottom: 1rpx solid #e9e9e9;
+    background-image: linear-gradient(45deg, #39b54a, #8dc63f);
+    width: 97.5%;
+    color:#fff;
+}

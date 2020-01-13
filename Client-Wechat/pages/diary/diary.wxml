@@ -1,0 +1,70 @@
+<view class='canvasBox'>
+<view class="bg-gradual-blue">
+  <view class='canvas-score' hidden='{{canvasShow}}'>
+  <view class='biggerCircle'></view>
+  <view class='bigCircle'></view>
+  <view class='littleCircle'></view>
+  <canvas canvas-id="runCanvas" id="runCanvas" class='canvas'></canvas>
+  </view>
+</view>
+</view>
+
+<view class="cart-title">
+     <text>今日份食谱：</text>
+     <view class="daka2" hidden='{{!hasdaka||!daka}}'>打卡</view>
+     <view class="daka"  hidden='{{daka}}' bindtap="showModal" data-target="dakaConfirm"> 打卡 </view>
+     <view class="daka" hidden='{{hasdaka}}'>已打卡</view>
+</view>
+<view wx:if="{{hasList}}">
+   <view class="cu-list menu-avatar">
+    <view class="solid-bottom cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{carts}}" wx:key="{{index}}" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}">
+      <navigator url="../details/details?id={{item.id}}">
+      <image class="thumb" src="{{item.image}}"></image></navigator>
+      <view class="content">
+        <view class="text-black">{{item.name}}</view>
+        <view class="text-gray text-sm">{{item.cal}}kcal·{{item.amount}}g</view>
+      </view>
+      <view class="right-box" style="text-align:center;padding:10rpx;width:100rpx">
+        <view class="text-black text-xxl" style='border:1px solid {{item.color}};border-radius:15rpx;'>
+        {{item.score}}</view>
+        <view class="text-grey text-xs">{{item.eva}}</view>
+      </view>
+      <view class="move">
+        <view class="bg-gradual-red" data-index="{{index}}" bindtap='deleteList'>
+        <text class="cuIcon-roundclose xxl text-white"></text></view>
+      </view>
+    </view>
+  </view>     
+
+</view>
+<view wx:else>
+        <view class="cart-no-data">今日份食谱是空的哦~</view>
+</view>
+
+<view class="cu-modal {{modalName=='dakaConfirm'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">确定要打卡吗？</view>
+    </view>
+    <view class="cu-bar bg-white justify-center">
+      <view class="action">
+        <button class="cu-btn bg-blue" bindtap="daka">确定</button>
+        <button class="cu-btn line-blue text-blue margin-left" bindtap="hideModal">取消</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='dakaSuccess'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">打卡成功</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-blue"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      获得1枚金币！
+    </view>
+  </view>
+</view>

@@ -1,0 +1,81 @@
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <view class="box"><open-data type="userAvatarUrl"></open-data></view>
+    <view class="text-xl"><open-data type="userNickName" class="nickname"></open-data>
+    </view>
+    <image src="https://image.weilanwl.com/gif/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+  </view>
+  <view class="padding flex text-center text-grey bg-white shadow-warp">
+  <view class="flex flex-sub flex-direction solid-right">
+    <view class="flex align-end justify-center">
+      <view class="text-xxl text-green ">{{healthy}}</view>
+      <view class="text-xs text-green padding-left-xs padding-bottom-xs" >分</view>
+      </view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-people"></text> 健康</view>
+    </view>
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="flex align-end justify-center">
+      <view class="text-xxl text-blue ">{{daka}}</view>
+      <view class="text-xs text-blue padding-left-xs padding-bottom-xs" >天</view>
+      </view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-calendar"></text> 打卡</view>
+    </view>
+    <view class="flex flex-sub flex-direction">
+      <view class="flex align-end justify-center">
+      <view class="text-xxl text-yellow ">{{gold}}</view>
+      <view class="text-xs text-yellow padding-left-xs padding-bottom-xs" >枚</view>
+      </view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-moneybag"></text>金币</view>
+    </view>
+  </view>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/body/body" hover-class="none">
+        <image class="png" mode="aspectFit" src='/images/body.png'></image>
+        <text class="text-grey">  身体数据</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/calendar/calendar" hover-class="none">
+        <image class="png" mode="aspectFit" src='/images/daka.png'></image>
+        <text class="text-grey">  打卡记录</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/help/help" hover-class="none">
+        <image class="png" mode="aspectFit" src='/images/help.png'></image>
+        <text class="text-grey">  帮助中心</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showModal" data-target="about">
+        <image class="png" mode="aspectFit" src='/images/about.png'></image>
+        <text class="text-grey">  关于我们</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content" bindtap="clean">
+        <image class="png" mode="aspectFit" src='/images/config.png'></image>
+        <text class="text-grey"> 清理缓存</text>
+      </view>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>
+
+<view class="cu-modal {{modalName=='about'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">关于我们</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-blue"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+    iNutrition团队成员：\r\n王同普 张鑫杰\r\n张梓强 朱贤明。
+    </view>
+  </view>
+</view>

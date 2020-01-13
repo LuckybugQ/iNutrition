@@ -1,0 +1,83 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">身体数据</view>
+</cu-custom>
+<button class="upload" bindtap="confirm"><text class="cuIcon-upload"> </text> 智能设备云同步</button>
+<view class="cu-form-group margin-top">
+		<view class="title">性别</view>
+		<picker bindchange="genderChange" value="{{gender}}" range="{{array1}}">
+			<view class="picker">
+				{{array1[gender]}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">生日</view>
+		<picker mode="date" value="{{birthday}}" start="1900-01-01" end="2020-01-01" bindchange="birthdayChange">
+			<view class="picker">
+			{{birthday}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">常住</view>
+		<picker mode="region" bindchange="placeChange" value="{{place}}">
+			<view class="picker">
+				{{place[0]}}，{{place[1]}}，{{place[2]}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">身高</view>
+		<picker bindchange="heightChange" value="{{height}}" range="{{array2}}">
+			<view class="picker">
+				{{array2[height]}}cm
+			</view>
+		</picker>
+	</view>
+    <view class="cu-form-group">
+		<view class="title">体重</view>
+		<picker bindchange="weightChange" value="{{weight}}" range="{{array3}}">
+			<view class="picker">
+				{{array3[weight]}}kg
+			</view>
+		</picker>
+	</view>
+    <view class="cu-form-group">
+		<view class="title">体脂率</view>
+		<picker bindchange="fatrateChange" value="{{fatrate}}" range="{{array4}}">
+			<view class="picker">
+				{{array4[fatrate]}}%
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">血压</view>
+		<picker mode="multiSelector" bindchange="xieyaChange" value="{{xieya}}"
+		 range="{{multiArray}}">
+			<view class="picker">
+				{{multiArray[0][xieya[0]]}}mmHg / {{multiArray[1][xieya[1]]}}mmHg
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">血糖</view>
+		<picker bindchange="xietangChange" value="{{xietang}}" range="{{array5}}">
+			<view class="picker">
+				{{array5[xietang]}}mmol/L
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">运动强度</view>
+		<picker bindchange="sportsChange" value="{{sports}}" range="{{array6}}">
+			<view class="picker">
+				{{array6[sports]}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">精神压力</view>
+		<switch class="blue sm" bindchange='gxyChange' checked='{{gxy}}'></switch>
+	</view>
+<button class="confirm" bindtap="confirm"><text class="cuIcon-roundcheck"> </text> 提交</button>

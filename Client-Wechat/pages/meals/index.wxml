@@ -1,0 +1,64 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">膳食</view>
+</cu-custom>
+<!--index.wxml-->
+<view class="container">
+  <view class='main-block'>
+<view class="weui-search-bar">
+<view class="weui-search-bar__form">
+<view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <view bindtap="search"class="weui-search-bar__input">今天你想吃什么？</view>
+</view>
+
+</view>
+</view>
+</view>
+  <view class='list'>
+    <view class='list-row'>
+      <view class='list1' >        
+        <view class='list-img'><navigator url="../searchresult/searchresult?cata=breakfast"><image src='../../images/breakfast.jpg'></image></navigator> </view>
+        <view class='list-type'><text class='xxl'>早餐</text></view>
+        
+      </view>
+      <view class='list1' >
+        
+        <view class='list-img'><navigator url="../searchresult/searchresult?cata=lunch"><image src='../../images/lunch.jpg'></image></navigator> </view>
+        <view class='list-type'><text class='xxl'>午餐</text></view>
+        
+      </view>
+    </view>
+        <view class='list-row'>
+      <view class='list1' >
+        
+        <view class='list-img'><navigator url="../searchresult/searchresult?cata=dinner"><image src='../../images/dinner.jpg'></image></navigator> </view>
+        <view class='list-type'><text class='xxl'>晚餐</text></view>
+        
+      </view>
+      <view class='list1' >
+        
+        <view class='list-img'><navigator url="../searchresult/searchresult?cata=noodle"><image src='../../images/noodle.jpg'></image></navigator> </view>
+        <view class='list-type'><text class='xxl'>面类餐</text></view>
+        
+      </view>
+    </view>    <view class='list-row'>
+      <view class='list1' >
+        
+        <view class='list-img'><navigator url="../searchresult/searchresult?cata=vegetarian"><image src='../../images/vegetable.jpg'></image></navigator> </view>
+        <view class='list-type'><text class='xxl'>全素餐</text></view>
+        
+      </view>
+      <view class='list1' >
+        
+        <view class='list-img'><navigator url="../searchresult/searchresult?cata=keep"><image src='../../images/keep.jpg'></image></navigator> </view>
+        
+        <view class='list-type'><text class='xxl'>健身餐</text></view>
+        
+      </view>
+    </view>
+
+   
+  </view>
+
+</view>

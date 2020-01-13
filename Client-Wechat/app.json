@@ -1,0 +1,66 @@
+{
+  "pages": [
+
+    "pages/index/index",
+    "pages/shop/shop",
+    "pages/build/build",
+    "pages/search/search",
+    "pages/search-food/search",
+    "pages/details/details",
+    "pages/confirmOrder/confirmOrder",
+    "pages/user/home",
+    "pages/diary/diary",
+    "pages/home/home",
+    "pages/logs/logs",
+    "pages/meals/index",
+    "pages/foods/index",
+    "pages/searchresult/searchresult",
+    "pages/body/body",
+    "pages/calendar/calendar",
+    "pages/help/help"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "selectedColor": "#0e9eda",
+    "color": "#8a8a8a",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "搜索",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/search-blue.png"
+      },
+      {
+        "pagePath": "pages/build/build",
+        "text": "制作",
+        "iconPath": "images/build.png",
+        "selectedIconPath": "images/build-active.png"
+      },
+      {
+        "pagePath": "pages/diary/diary",
+        "text": "日记",
+        "iconPath": "images/diary.png",
+        "selectedIconPath": "images/diary-active.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "市集",
+        "iconPath": "images/shop.png",
+        "selectedIconPath": "images/shop-active.png"
+      },
+      {
+        "pagePath": "pages/user/home",
+        "text": "用户",
+        "iconPath": "images/self.png",
+        "selectedIconPath": "images/self-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,4 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">搜索</view>
+</cu-custom><include src="../../wxSearchView/wxSearchView.wxml" /><!--pages/search/search.wxml-->
