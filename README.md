@@ -5,8 +5,8 @@
 <p align="center"><span style="font-size:50px">iNutrition - 基于大数据挖掘的饮食推荐小程序</span>
 </p>
 
-- 基于 `大数据挖掘` 的一款饮食推荐 `小程序`
-- 如果觉得不错 给个`star` 支持一下 🤓
+- 基于 `Machine Learning` 的一款饮食推荐 `Mini Program`
+- 如果觉得不错 给个 `Star` 支持一下 🤓
 
 ## 视频演示
 - [Bilibili](https://www.bilibili.com/video/av83549884)
